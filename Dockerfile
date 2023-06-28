@@ -10,6 +10,10 @@ COPY package*.json yarn.lock ./
 # Install all dependencies
 RUN yarn install --production
 
+RUN yarn run setup
+
+RUN yarn build
+
 # Bundle the source code inside the Docker image
 COPY . .
 
