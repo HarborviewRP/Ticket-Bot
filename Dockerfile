@@ -10,7 +10,7 @@ COPY package*.json yarn.lock ./
 # Install all dependencies
 RUN yarn install --production
 
-RUN yarn run setup
+RUN npm run setup
 
 RUN yarn build
 
