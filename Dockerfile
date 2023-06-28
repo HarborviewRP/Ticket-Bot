@@ -10,6 +10,8 @@ COPY package*.json yarn.lock ./
 # Install all dependencies
 RUN npm install --production
 
+RUN npm run build
+
 # Bundle the source code inside the Docker image
 COPY . .
 
