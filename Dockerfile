@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json yarn.lock ./
 
 # Install all dependencies
-RUN yarn install --production
+RUN npm install --production
 
 # Bundle the source code inside the Docker image
 COPY . .
@@ -23,4 +23,4 @@ RUN npx prisma generate
 RUN yarn build
 
 # Start command to run your application
-CMD ["yarn", "start"]
+CMD ["npm", "run", "start"]
