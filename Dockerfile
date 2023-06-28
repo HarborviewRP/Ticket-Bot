@@ -12,17 +12,14 @@ RUN npm install --production
 
 RUN npm run build
 
-# Bundle the source code inside the Docker image
-COPY . .
-
 # Copy Prisma schema
 COPY prisma ./prisma
 
 # Generate Prisma Client
 RUN npx prisma generate
 
-# Build the application
-RUN yarn build
+# Bundle the source code inside the Docker image
+COPY . .
 
 # Start command to run your application
 CMD ["npm", "run", "start"]
